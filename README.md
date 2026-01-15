@@ -32,23 +32,32 @@ This project provides a centralized web platform where users can search for near
 ---
 
 ## Tech Stack
-* Frontend:Vanilla JS(HTML+CSS+Javascript)
-  
-* Backend-Python(programming language),Flask (Web Framework)
 
-* Database:SQLite
-   
-* Deployment:Render
+### Frontend
+* HTML
+* CSS
+* JavaScript
 
-*Tools & Environment:
-  1. Git & GitHub  
-  2.VS Code  
-  3.pip (Python Package Manager) 
+### Backend
+* Python
+* Flask (Web Framework)
+
+### Database
+* SQLite
+
+### Deployment
+* Render
+
+### Tools & Environment
+* Git & GitHub
+* VS Code
+* pip (Python Package Manager)
+
 
 ---
 
-## Project Structure:
----
+## 📂 Project Structure
+
 HEALTHCARE_PROJECT/
 │── app.py
 │── requirements.txt
@@ -58,7 +67,7 @@ HEALTHCARE_PROJECT/
 │
 ├── templates/
 │ ├── index.html
-│ ├── admin.html
+│ └── admin.html
 │
 ├── static/
 │ ├── style.css
@@ -73,7 +82,6 @@ HEALTHCARE_PROJECT/
 ## Installation and Setup:
 Follow the steps below to run the project locally.
 
----
 
 ## Prerequisites
 
@@ -82,7 +90,6 @@ Follow the steps below to run the project locally.
 - Git
 - Any modern web browser
 
----
 
 ## Clone the Repository
 
@@ -94,7 +101,6 @@ Then move into the project folder:
 
 cd HEALTHCARE_PROJECT
 
----
 
 ## Create a Virtual Environment
 
@@ -107,9 +113,9 @@ Activate it:
 Windows:
 venv\Scripts\activate
 
----
 
 ## Install Required Dependencies
+
 
 Install dependencies:
 
@@ -119,7 +125,6 @@ If that fails, run:
 
 pip install flask
 
----
 
 ## Run the Application
 
@@ -131,7 +136,6 @@ You should see something like:
 
 Running on http://127.0.0.1:5000/
 
----
 
 ## Open in Browser
 
@@ -139,7 +143,6 @@ Open your browser and go to:
 
 http://127.0.0.1:5000/
 
----
 
 ## Stop the Server
 
