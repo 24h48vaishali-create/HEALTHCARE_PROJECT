@@ -1,28 +1,28 @@
-# 🏥 Healthcare Registration System
+# Web-Based Emergency Healthcare Information System
 
-## Hackathon Project
+## 
 
-The **Healthcare Registration System** is a web-based application that simplifies patient registration by replacing manual paperwork with a digital process. It enables users to register online quickly while securely storing their details for healthcare providers.
-
----
-
-## 🎯 Objective
-To create a simple and efficient digital registration system for healthcare facilities.
+The Emergency Healthcare Information System is a web-based application that helps users quickly identify nearby hospitals offering required emergency medical services. The system provides real-time information about hospital facilities and doctor availability to reduce delays during critical medical situations.
 
 ---
 
-## 🚀 Features
-- Online patient registration  
-- Form validation  
-- Backend data storage  
-- Clean and user-friendly UI  
+## Description of Problem Statement
+During medical emergencies, patients and their families often face difficulty in identifying the right hospital that provides the required emergency treatment. Lack of centralized and real-time information leads to wasted time, confusion, and delayed medical care, which can be life-threatening.
 
 ---
 
-## 🛠 Tech Stack
-- Frontend: HTML, CSS, JavaScript  
-- Backend: Python (Flask)  
-- Database: SQLite  
+## Solution Overview
+This project provides a centralized web platform where users can search for nearby hospitals based on emergency type and location. Hospitals update their emergency service availability, ensuring that users receive accurate and up-to-date information. The system helps patients reach the correct hospital without unnecessary delays.
+
+---
+
+## Key Features
+*Emergency-based hospital search
+*Location-based nearby hospital listing
+*Real-time availability of emergency services
+*Doctor and specialist availability view
+*Hospital registration and service updates
+*Simple and fast user interface for emergencies
 
 ---
 
