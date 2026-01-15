@@ -34,13 +34,21 @@ This project provides a centralized web platform where users can search for near
 ## Tech Stack
 * Frontend:Vanilla JS(HTML+CSS+Javascript)
   
-* Backend-Python(programming language)
+* Backend-Python(programming language),Flask (Web Framework)
 
-*Deployment:Render
+* Database:SQLite
+   
+* Deployment:Render
+
+*Tools & Environment:
+  1. Git & GitHub  
+  2.VS Code  
+  3.pip (Python Package Manager) 
 
 ---
 
 ## Project Structure:
+---
 HEALTHCARE_PROJECT/
 │── app.py
 │── requirements.txt
@@ -59,6 +67,7 @@ HEALTHCARE_PROJECT/
 ├── README.md
 └── .gitignore
 
+---
 ---
 
 ## Installation and Setup:
