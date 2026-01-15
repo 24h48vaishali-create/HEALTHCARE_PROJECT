@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Admin Panel</title>
+    <link rel="stylesheet" href="/files/style.css">
+</head>
+
+<body style="background:#f7fafc;">
+
+    <!-- LOGIN -->
+    <div class="selection-box" id="login-form">
+        <h2>Hospital Management Login</h2>
+        <input type="text" id="user" placeholder="Username" class="admin-input">
+        <input type="password" id="pass" placeholder="Password" class="admin-input">
+        <button class="btn-n" onclick="adminLogin()">Login to Dashboard</button>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="selection-box results-wide" id="dash" style="display:none; text-align:left;">
+        <h2>Hospital Control Panel</h2>
+        <hr><br>
+
+        <!-- SPECIALIZATION FIRST -->
+        <label><strong>Doctor Specialization:</strong></label>
+        <select id="up-spec" class="admin-input">
+            <option value="">Select Specialization</option>
+        </select>
+
+        <!-- DOCTOR LIST -->
+        <label><strong>Primary On-Duty Doctor:</strong></label>
+        <select id="up-doc" class="admin-input">
+            <option value="">Select Doctor</option>
+        </select>
+
+        <!-- ICU -->
+        <label><strong>Available ICU Beds:</strong></label>
+        <input type="number" id="up-beds" class="admin-input">
+
+        <!-- AMBULANCE -->
+        <label><strong>Ambulance Fleet Status:</strong></label>
+        <select id="up-amb" class="admin-input">
+            <option value="true">Ambulance Available</option>
+            <option value="false">All Ambulances Busy</option>
+        </select>
+
+        <!-- GPS -->
+        <label><strong>GPS Coordinates (Lat, Lng):</strong></label>
+        <div style="display:flex; gap:10px;">
+            <input type="text" id="up-lat" placeholder="Lat" class="admin-input">
+            <input type="text" id="up-lng" placeholder="Lng" class="admin-input">
+        </div>
+
+        <button class="btn-e" onclick="updateAdmin()" style="margin-top:20px;">
+            🚀 Publish Updates to Patients
+        </button>
+        <button class="back-btn" onclick="window.location.href='/'">
+            Logout
+        </button>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        /* Doctors Database (Multiple doctors per specialization) */
+        const doctorsData = {
+            "Cardiologist": [
+                "Dr. Arjun Rao",
+                "Dr. Suresh Iyer"
+            ],
+            "Neurologist": [
+                "Dr. Meera Nair",
+                "Dr. Rohan Malhotra"
+            ],
+            "Orthopedic Surgeon": [
+                "Dr. Karthik Sharma",
+                "Dr. Vikram Patel"
+            ],
+            "Emergency Medicine": [
+                "Dr. Ananya Singh",
+                "Dr. Neha Verma"
+            ]
+        };
+
+        /* Populate specialization dropdown */
+        document.addEventListener("DOMContentLoaded", () => {
+            const specSelect = document.getElementById("up-spec");
+
+            Object.keys(doctorsData).forEach(spec => {
+                const opt = document.createElement("option");
+                opt.value = spec;
+                opt.textContent = spec;
+                specSelect.appendChild(opt);
+            });
+
+            specSelect.addEventListener("change", () => {
+                populateDoctors(specSelect.value);
+            });
+        });
+
+        /* Populate doctors based on specialization */
+        function populateDoctors(spec) {
+            const docSelect = document.getElementById("up-doc");
+            docSelect.innerHTML = "<option value=''>Select Doctor</option>";
+
+            if (doctorsData[spec]) {
+                doctorsData[spec].forEach(doc => {
+                    const opt = document.createElement("option");
+                    opt.value = doc;
+                    opt.textContent = doc;
+                    docSelect.appendChild(opt);
+                });
+            }
+        }
+
+        /* LOGIN */
+        function adminLogin() {
+            const user = document.getElementById('user').value;
+            const pass = document.getElementById('pass').value;
+
+            if (user === 'admin' && pass === '123') {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('dash').style.display = 'block';
+                loadData();
+            } else {
+                alert("Invalid Credentials");
+            }
+        }
+
+        /* LOAD EXISTING DATA */
+        function loadData() {
+            fetch('/api/admin/data')
+                .then(r => r.json())
+                .then(d => {
+                    document.getElementById('up-spec').value = d.specialty;
+                    populateDoctors(d.specialty);
+                    document.getElementById('up-doc').value = d.doctor;
+                    document.getElementById('up-beds').value = d.icu_beds;
+                    document.getElementById('up-amb').value = d.amb_available.toString();
+                    document.getElementById('up-lat').value = d.lat;
+                    document.getElementById('up-lng').value = d.lng;
+                });
+        }
+
+        /* UPDATE */
+        function updateAdmin() {
+            const payload = {
+                doctor: document.getElementById('up-doc').value,
+                specialty: document.getElementById('up-spec').value,
+                icu_beds: document.getElementById('up-beds').value,
+                amb_status: document.getElementById('up-amb').value,
+                lat: document.getElementById('up-lat').value,
+                lng: document.getElementById('up-lng').value
+            };
+
+            fetch('/api/admin/update', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).then(() => alert("All hospital records updated live!"));
+        }
+    </script>
+
+</body>
+</html>

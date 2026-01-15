@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emergency Healthcare System</title>
+    <link rel="stylesheet" href="/files/style.css">
+</head>
+<body>
+    <div id="home-screen" class="screen">
+        <div class="main-wrapper">
+            <h1>Healthcare Emergency Support</h1>
+            <div class="login-container">
+                <div class="card-row">
+                    <div class="login-card" id="patient-btn">
+                        <img src="https://cdn-icons-png.flaticon.com/512/387/387561.png" width="60">
+                        <p>Patient / User Login</p>
+                    </div>
+                    <div class="login-card" onclick="window.location.href='/admin_panel'">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3305/3305025.png" width="60">
+                        <p>Hospital Admin Login</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mode-screen" class="screen" style="display:none;">
+        <div class="selection-box">
+            <h2>Select Category</h2>
+            <button class="btn-e" onclick="loadCases('emergency')">EMERGENCY</button>
+            <button class="btn-n" onclick="loadCases('non-emergency')">NON-EMERGENCY</button>
+        </div>
+    </div>
+
+    <div id="case-screen" class="screen" style="display:none;">
+        <div class="selection-box"><div id="case-list"></div></div>
+    </div>
+
+    <div id="hospital-screen" class="screen" style="display:none;">
+        <div class="selection-box results-wide">
+            <div id="aid-box" class="aid-container"></div>
+            <div id="hospital-list"></div>
+            <button class="back-btn" onclick="location.reload()">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="/files/script.js"></script>
+</body>
+</html>
