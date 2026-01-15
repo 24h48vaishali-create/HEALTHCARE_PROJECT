@@ -27,8 +27,8 @@ To create a simple and efficient digital registration system for healthcare faci
 ---
 
 ## 👩‍💻 Team
-- Vaishali  
-- Tanish
+- Vaishali Kolpe
+- Tanish Dinesh Purusha
 - Shaun Joshua Sequeira
 - Shravya G
 
