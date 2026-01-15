@@ -56,8 +56,9 @@ This project provides a centralized web platform where users can search for near
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
+```
 HEALTHCARE_PROJECT/
 │── app.py
 │── requirements.txt
@@ -66,18 +67,17 @@ HEALTHCARE_PROJECT/
 │── admin_routes.py
 │
 ├── templates/
-│ ├── index.html
-│ └── admin.html
+│   ├── index.html
+│   └── admin.html
 │
 ├── static/
-│ ├── style.css
-│ └── script.js
+│   ├── style.css
+│   └── script.js
 │
 ├── README.md
 └── .gitignore
+```
 
----
----
 
 ## Installation and Setup:
 Follow the steps below to run the project locally.
