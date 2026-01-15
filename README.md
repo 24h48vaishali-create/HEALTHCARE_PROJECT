@@ -38,6 +38,3 @@ To create a simple and efficient digital registration system for healthcare faci
 https://github.com/24h48vaishali-create/HEALTHCARE_PROJECT.git
 
 ---
-
-## 🏆 Hackathon Ready
-Lightweight, easy to deploy, and suitable for quick demos.
